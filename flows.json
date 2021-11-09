@@ -269,16 +269,6 @@
         "responsetimeout": "10000"
     },
     {
-        "id": "626a9ef97e398344",
-        "type": "ui_group",
-        "name": "",
-        "tab": "",
-        "order": 1,
-        "disp": false,
-        "width": "6",
-        "collapse": false
-    },
-    {
         "id": "c104210d.418eb",
         "type": "template",
         "z": "2c5d25cb.3428ca",
@@ -499,7 +489,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 60,
+        "y": 40,
         "wires": [
             []
         ]
@@ -1102,7 +1092,7 @@
         "type": "function",
         "z": "85e21fcb925ef32f",
         "name": "Publish device",
-        "func": "if (!msg.payload) return null;\nvar device = flow.get('device');\nvar newMsg = \n{\n    topic: flow.get('deviceProps').project + '/' + flow.get('deviceProps').deviceType + '/' + flow.get('deviceProps').name + '/reading',\n    payload: JSON.stringify(device)\n};\nreturn  newMsg;  \n",
+        "func": "if (!msg.payload) return null;\nvar device = flow.get('device');\nif (device == undefined) return null;\nvar newMsg = \n{\n    topic: flow.get('deviceProps').project + '/' + flow.get('deviceProps').deviceType + '/' + flow.get('deviceProps').name + '/reading',\n    payload: JSON.stringify(device)\n};\nreturn  newMsg;  \n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
