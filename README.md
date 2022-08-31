@@ -6,6 +6,7 @@ MQTTCLIENTID=blinky-scale-tray-01
 MQTTSERVERIP=something.cloudmqtt.com  
 MQTTUSERNAME=xxxx  
 MQTTPASSWORD=yyyy  
+PM2NAME=blinky-scale-01  
 NODEREDCONFIGSECRET=a-secret-key    
 
 with no CR after the last line
